@@ -1,0 +1,12 @@
+services:
+  webserver:
+    build:
+      context: dockerfiles
+      dockerfile: 03-nginx-image-serving-file.Dockerfile
+    image: docker-tut:03-latest
+    ports:
+      - 8000:80
+    volumes:
+      - nginx_logs:/var/log/nginx
+volumes:
+  nginx_logs:
